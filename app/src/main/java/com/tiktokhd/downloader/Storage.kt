@@ -14,7 +14,7 @@ import java.io.OutputStream
 object Storage {
 
     private const val SUBDIR = "TikTok"
-    private const val RELATIVE_PATH = Environment.DIRECTORY_DOWNLOADS + "/" + SUBDIR + "/"
+    private val RELATIVE_PATH = Environment.DIRECTORY_DOWNLOADS + "/" + SUBDIR + "/"
 
     sealed class Target {
         abstract val displayPath: String
