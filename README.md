@@ -1,36 +1,4 @@
-# TikTok HD Downloader (Android)
 
-Share a TikTok link -> the app grabs the HD MP4 and saves it to `Downloads/TikTok/`
-as `username_videoID.mp4`. No pasting, no second button.
-
-## Getting the APK (no Android Studio needed)
-
-1. Create a new **empty** GitHub repository (private is fine).
-2. Upload every file in this folder, keeping the folder structure. The web UI
-   works: **Add file -> Upload files**, then drag the whole unzipped folder in.
-   Make sure `.github/workflows/build.yml` comes along (it is a hidden folder;
-   if the browser skips it, create the file manually via **Add file -> Create new file**
-   and name it `.github/workflows/build.yml`).
-3. Go to the **Actions** tab. The build starts on push; otherwise pick
-   **Build APK -> Run workflow**.
-4. When it finishes (~3-5 min), open the run and download the artifact
-   **TikTokHDDownloader-debug-apk**. Unzip it to get `app-debug.apk`.
-5. Copy it to your phone, open it, and allow "install unknown apps" for your
-   file manager or browser when prompted.
-
-This is a debug-signed APK, which installs normally on any phone. It just can't
-go on the Play Store as-is.
-
-## Building locally instead
-
-There is deliberately no `gradle-wrapper.jar` in this repo (it is a binary that
-could not be fetched in the environment where the project was generated), so
-`./gradlew` will not work until you create it. With Gradle 8.7+ installed:
-
-    gradle wrapper          # optional, generates the wrapper
-    gradle assembleDebug
-
-APK lands in `app/build/outputs/apk/debug/app-debug.apk`.
 
 ## How it works
 
